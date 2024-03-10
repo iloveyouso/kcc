@@ -1,0 +1,13 @@
+h5py
+tqdm
+torch
+pointnet2_ops
+pyrender
+matplotlib
+easydict
+opencv_python
+PyYAML
+tensorboardX
+trimesh
+python-fcl
+rtree

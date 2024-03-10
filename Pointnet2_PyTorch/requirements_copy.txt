@@ -1,0 +1,9 @@
+numpy
+msgpack-numpy
+lmdb
+h5py
+
+hydra-core
+pytorch-lightning
+
+./pointnet2_ops_lib/.
