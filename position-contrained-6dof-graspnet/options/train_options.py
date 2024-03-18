@@ -25,6 +25,7 @@ class TrainOptions(BaseOptions):
             help='frequency of running test in training script')
         self.parser.add_argument(
             '--continue_train',
+            default=True, #bjkimg
             action='store_true',
             help='continue training: load the latest model')
         self.parser.add_argument(

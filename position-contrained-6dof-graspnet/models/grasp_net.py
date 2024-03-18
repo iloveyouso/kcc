@@ -75,13 +75,13 @@ class GraspNetModel:
         self.reconstruction_loss = self.criterion[1](
                 predicted_cp,
                 self.targets,
-                device=self.device)
+                device=self.device) #MAIN PART TO MODIFY
         self.kl_loss = self.opt.kl_loss_weight * self.criterion[0](
                 mu, logvar, device=self.device)
         self.loss = self.kl_loss + self.reconstruction_loss
         self.loss.backward()
 
-    def optimize_parameters(self):
+    def optimize_parameters(self): #MAIN PART TO MODIFY!! (BJ KIM)
         self.optimizer.zero_grad()
         out = self.forward()
         self.backward(out)

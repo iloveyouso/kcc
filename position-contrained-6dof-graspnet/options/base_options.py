@@ -97,6 +97,10 @@ class BaseOptions:
         self.parser.add_argument('--caching', '-c',
                                  action='store_true',
                                  help='If true, then once training data is read from a file it is cached in a large list. Warning, this can consume a lot of RAM memory!')
+        self.parser.add_argument('--model_name', '-mn',
+                                type=str,
+                                default="",
+                                help='Specify model name.')
  
 
     def parse(self):
@@ -140,8 +144,14 @@ class BaseOptions:
             name += "_latent_size_" + str(self.opt.latent_size)
             if self.opt.extra_name != "":
                 name += "_"+self.opt.extra_name
+            
+            if self.opt.model_name != "": #bjKIM
+                name = self.opt.model_name
+            
             self.opt.name = name
+            
             expr_dir = os.path.join(self.opt.checkpoints_dir, self.opt.name)
+            
             if os.path.isdir(expr_dir) and not self.opt.continue_train:
                 option = "Directory " + expr_dir +\
                     " already exists and you have not chosen to continue to train.\nDo you want to override that training instance with a new one the press (Y/N)."

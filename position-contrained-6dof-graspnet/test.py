@@ -1,5 +1,6 @@
 from options.test_options import TestOptions
 from models import create_model
+# from data import DataLoader # bjkim
 
 
 def run_test(epoch=-1, name="", writer=None, dataset_test=None):
@@ -7,7 +8,7 @@ def run_test(epoch=-1, name="", writer=None, dataset_test=None):
     opt = TestOptions().parse()
     opt.serial_batches = True  # no shuffle
     opt.name = name
-    #dataset = DataLoader(opt)
+    # dataset_test = DataLoader(opt) # bjkim
     model = create_model(opt)
     # test
     point_clouds = []

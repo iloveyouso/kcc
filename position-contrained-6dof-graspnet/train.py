@@ -36,7 +36,7 @@ def main():
             total_steps += opt.batch_size
             epoch_iter += opt.batch_size
             model.set_input(data)
-            model.optimize_parameters()
+            model.optimize_parameters() # Main part!!!
             if total_steps % opt.print_freq == 0:
                 loss_types = []
                 loss = [
